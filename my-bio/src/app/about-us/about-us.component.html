@@ -1,0 +1,21 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="mb-1 px-3">
+        <label class="form-label">Name</label>
+        <input type="text" formControlName="nameF" class="form-control" placeholder="name">
+        <!-- <h1>{{nameFirst}}</h1> -->
+    </div>
+    <div class="mb-1 px-3">
+        <label class="form-label">Email address</label>
+        <input type="email" formControlName="email" class="form-control" placeholder="name@example.com">
+    </div>
+    <div class="mb-1 px-3">
+        <label class="form-label">Textarea</label>
+        <textarea class="form-control" formControlName="comments" rows="2"></textarea>
+    </div>
+    <div class="mt-3 px-5">
+        <!-- <input type="submit"> -->
+        <!-- {{myForm.invalid}} -->
+        <button class="btn btn-primary" type="submit" [disabled]="myForm.invalid" 
+        [ngClass]="myForm.invalid ? 'btn-danger' : 'btn-success'" >Submit</button>
+    </div>
+</form>
